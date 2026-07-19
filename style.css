@@ -16,6 +16,15 @@ body{
   padding: 20px 60px;       
 }
 
+.header__toggle {
+  display: block;
+  background: none;
+  border: none;
+  font-size: 28px;
+  color: white;
+  cursor: pointer;
+}
+
 .header__logo{
   display: flex;
   align-items: center;
@@ -40,10 +49,28 @@ body{
   box-shadow: 0 0 20px #47F5C5;
 }
 
+
 .header__nav {
-  display: flex;
-  justify-content: flex-end;   
+  display: none;
 }
+
+.header__nav.is-open {
+  display: block;
+  width: 100%;
+}
+
+.header__nav.is-open .header__nav-list {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+@media (min-width: 1024px) {
+  .header__toggle { display: none; }
+  .header__nav { display: block; }
+}
+
 
 .header__nav-list {
   display: flex;              
