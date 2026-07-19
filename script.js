@@ -26,3 +26,13 @@ navLinks.forEach(function (link) {
     navToggle.setAttribute('aria-expanded', 'false');
   });
 });
+
+const galleryImages = document.querySelectorAll('.gallery__card-image');
+
+galleryImages.forEach(function (imageWrap) {
+  imageWrap.addEventListener('click', function () {
+    const card = imageWrap.closest('.gallery__card');
+    const details = card.querySelector('.gallery__card-details');
+    details.classList.toggle('is-visible');
+  });
+});
